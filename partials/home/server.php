@@ -2,15 +2,15 @@
 
 include __DIR__ .'/../database.php';
 
-$sql = "SELECT room_number, floor FROM stanze";
+$sql = "SELECT id,room_number, floor FROM stanze";
 $result = $conn->query($sql);
 
 if ($result && $result->num_rows > 0) {
-// output data of each row
+ $results = [];
  while($row = $result->fetch_assoc()) {
-  echo "Stanza N. ". $row['room_number']. " piano: ".
-  $row['floor'];
-}
+   $results[] = $row;
+ }
+
 } elseif ($result) {
   echo "0 results";
 } else {
@@ -18,5 +18,3 @@ if ($result && $result->num_rows > 0) {
 }
 
 $conn->close();
-
- ?>
