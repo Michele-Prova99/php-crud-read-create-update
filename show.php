@@ -6,11 +6,9 @@ include __DIR__ .'/partials/show/server.php';
 
  ?>
 
-<body>
+  <div class="container p-3">
 
-  <div class="container">
-
-    <a href="index-php.php">Torna Indietro</a>
+    <h1>Dettagli della stanza</h1>
 
     <ul class="list-group">
       <li class="list-group-item">ID: <?php echo $row['id']; ?> </li>
@@ -19,8 +17,6 @@ include __DIR__ .'/partials/show/server.php';
       <li class="list-group-item">Numeri di letti: <?php echo $row['beds']; ?> </li>
     </ul>
 
-  </div>
+  </div> <!-- container close -->
 
-</body>
-
-</html>
+  <?php include __DIR__ .'/partials/templates/footer.php'; ?>
